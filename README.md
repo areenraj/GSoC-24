@@ -3,7 +3,7 @@
 ## First Task - Completed 12-03-24
 
 - Successfully compiled the code
-- Ran the 2d Airfoil simulation and verified the output
+- Ran the 2D Airfoil simulation and verified the output
 
 ## Second Task - Completed 14-04-24
 
