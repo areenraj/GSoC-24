@@ -106,13 +106,3 @@ for jNode in range(inNode-2, -1, -1):
 
 # Close the mesh file and exit
 Mesh_File.close()
-
-# GSOC 24 WORKING REPOSITORY
-
-## Assignment Status
-
-09-03-24: I have been assigned a set of five tasks to complete. The descriptions are given below.
-
-### 1. Compiling The Code - Completed 08-03-24
-
- Successfully finished and ran the 2D airfoil test case 
