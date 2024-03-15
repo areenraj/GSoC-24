@@ -6,6 +6,7 @@
 #  \version 1.0.
 
 # Import the option parser and parse input options
+import math
 from optparse import OptionParser
 
 parser=OptionParser()
@@ -30,10 +31,12 @@ KindBound = 3 # Line
 # Store the number of nodes and open the output mesh file
 nNode     = int(options.nNode)
 mNode     = int(options.mNode)
+l = float(options.l)
+b = float(options.b)
+inl = float(options.inlet)
+
 Mesh_File = open(options.filename,"w")
-l = int(options.l)
-b = int(options.b)
-inl = int(options.inlet)
+
 
 # Write the dimension of the problem and the number of interior elements
 Mesh_File.write( "%\n" )
@@ -78,8 +81,9 @@ Mesh_File.write( "% Boundary elements\n" )
 Mesh_File.write( "%\n" )
 Mesh_File.write( "NMARK= 5\n" )
 
-#Definin number of nodes for inlet
-inNode = round((mNode/b)*inl)
+#Defining number of nodes for inlet
+inElem = math.ceil(((mNode-1)/b)*inl)
+inNode = inElem + 1            
 
 # Write the boundary information for each marker
 Mesh_File.write( "MARKER_TAG= lower\n" )
@@ -99,7 +103,7 @@ Mesh_File.write( "MARKER_ELEMS= %s\n" % (mNode-inNode))
 for jNode in range(mNode-2, inNode-2, -1):
     Mesh_File.write( "%s \t %s \t %s\n" % (KindBound, (jNode + 1)*nNode, jNode*nNode ) )
 Mesh_File.write( "MARKER_TAG= inlet\n" )
-Mesh_File.write( "MARKER_ELEMS= %s\n" % (inNode-1))
+Mesh_File.write( "MARKER_ELEMS= %s\n" % (inElem))
 for jNode in range(inNode-2, -1, -1):
     Mesh_File.write( "%s \t %s \t %s\n" % (KindBound, (jNode + 1)*nNode, jNode*nNode ) )
 
