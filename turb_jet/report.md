@@ -2,9 +2,9 @@
 
 ## Problem Definition
 
-The following case consists of a setup of a turbulent axisymmetric jet at a Reynolds Number of 2000. Free jets are on the simpler side of flow simulations as they do not necessarily involve heavy interactions with a solid surface in the flow, making meshing and the case setup much easier. In such a jet we see the consistent expansion as well as retardation of velocity as the flow progresses axially through the domain.
+The following case consists of a setup of a turbulent axisymmetric jet at a Reynolds Number of 2000. Free jets are on the simpler side of flow simulations as they do not necessarily involve heavy interactions with a solid surface in the flow, making meshing and the case setup much easier. In such a jet, we see the consistent expansion as well as retardation of velocity as the flow progresses in the axial direction through the domain.
 
-The purpose of this test case will be to show the velocity profiles of a steady state simulation involving a free jet at low Mach Numbers
+The purpose of this test case will be to show the velocity profiles of a steady state simulation involving a free jet at low Mach Numbers.
 
 ## Case Setup 
 
@@ -14,7 +14,7 @@ Since we are using the low Mach Number approximation, therefore we can go ahead 
 
 The jet is axisymmetric, as well as turbulent, hence we need some sort of turbulent model that supports axisymmetry. 
 
-Hence we make the following choice
+Hence we make the following choice,
 
 ```
 SOLVER= INC_RANS
@@ -29,7 +29,7 @@ The incompressible SST model satsifies these requirements. By default, we will n
 
 ### Thermophysical and Initial Quantities
 
-We consider a constant Prandtl Number and Viscosity model along with Initial Conditions with magnitude set to 1.0 (except Temperature which is set to a standard 300 K)
+We consider a constant Prandtl Number and Viscosity model along with Initial Conditions with magnitude set to 1.0 (except Temperature which is set to a standard 300 K).
 
 Since this is a steady state simulation, we also set the time marching to off and consider the standard air model for the fluid.
 
@@ -55,7 +55,7 @@ REF_AREA= 1.0
 
 ### Boundary Conditions and Domain Setup
 
-We have defined a half domain with a symmetry axis. The top and left boundaries are the solid walls of the cylinder and an outlet is present towards the right. The fluid enters through a small slit in the left wall which is modeled as an inlet.
+We have defined a half domain with a symmetry axis. The top and left boundaries are the solid walls of the chamber and an outlet is present towards the right. The fluid enters through a small slit in the left wall which is modeled as an inlet.
 
 Given below is the domain setup that we are using with 40x10 m setup and an inlet of 0.3 m. This translates to a diameter of 0.6 m.
 
@@ -115,7 +115,7 @@ We make use of the standard FGMRES solver with an effective preconditioner such 
 
 ### Output Setup
 
-Here for screen output, we deifne the number of inner iterations as well as the max CFL, the variable residuals and the solver residuals. Similar things in history output as well.
+Here for screen output, we define the number of inner iterations as well as the max CFL, the variable residuals and the solver residuals. Similar things in history output as well.
 
 In the case of volume output we define all three groups from primitive to solution to residuals, which gives us a comprehensive look at our setup
 
@@ -142,7 +142,7 @@ OUTPUT_WRT_FREQ= 1000
 
 ## Running the Simulation
 
-We ran the code for 80000 iterations and, from the residual graph, we can see that we have achieved convergence. 
+We ran the code for 90000 iterations and, from the residual graph, we can see that we have achieved convergence. 
 
 ![Residuals](Residuals.png)
 
@@ -152,7 +152,9 @@ The velocity profiles for both axial and radial directions match with the profil
 
 The axial profile from normalized z coordinate 20 to 100, have a hyperbolic character.
 
-The radial profile from normalized y coordinate 0 to 2, at z=30, have a exponential decay.
+The radial profile from normalized y coordinate 0 to 7, at z=30, have a exponential decay.
+
+![Velocity Contours](velocity.png)
 
 ![Axial](axial_velocity.png)
 
