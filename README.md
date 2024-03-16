@@ -13,9 +13,11 @@
 
 The arguments for the script are as follows
 
+```
 - l specifies the length
 - b specifies the breadth
 - i specifies the inlet length
+```
 
 Note: Please make sure that the nodes in both x and y directions are divisible by l and b respectively \
 
