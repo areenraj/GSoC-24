@@ -59,6 +59,8 @@ We have defined a half domain with a symmetry axis. The top and left boundaries 
 
 Given below is the domain setup that we are using with 40x10 m setup and an inlet of 0.3 m. This translates to a diameter of 0.6 m.
 
+![Domain](Mesh.png)
+
 - RED - Upper Wall - No Slip and Adiabatic
 - GREEN - Left Wall - No Slip and Adiabatic
 - BLUE - Inlet - Constant Velocity 
@@ -84,6 +86,9 @@ The velocity is equal to 2 m/s and the diameter is 0.6. Therefore, for a Reynold
 The turbulent intensity is reduced form the default value of 5 percent to 2.5 percent and the eddy viscosity ratio is kept at 10.
 
 The mesh is graded finer on the inlet side to prevent the blowup of residuals and maintain convergence. This is done through modifying the python script.
+
+![Mesh](Mesh_Internal.png)
+
 
 ### Numerical Schemes
 
@@ -139,6 +144,8 @@ OUTPUT_WRT_FREQ= 1000
 
 We ran the code for 80000 iterations and, from the residual graph, we can see that we have achieved convergence. 
 
+![Residuals](Residuals.png)
+
 ## Results
 
 The velocity profiles for both axial and radial directions match with the profiles in the paper.
@@ -147,5 +154,7 @@ The axial profile from normalized z coordinate 20 to 100, have a hyperbolic char
 
 The radial profile from normalized y coordinate 0 to 2, at z=30, have a exponential decay.
 
+![Axial](axial_velocity.png)
 
+![Radial](radial_velocity.png)
 
