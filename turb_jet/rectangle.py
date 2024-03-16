@@ -22,6 +22,14 @@ parser.add_option("-l", "--l", dest="l", default=1,
                   help="use this to specify the max x coordinate", metavar="l")
 parser.add_option("-b", "--b", dest="b", default=1,
                   help="use this to specify the max y coordinate", metavar="b")
+parser.add_option("-c", "--c", dest="c", default=0,
+                  help="use this to specify the percentage of cells in x-direction in left side", metavar="c")
+parser.add_option("-g", "--g", dest="g", default=0,
+                  help="use this to specify the percentage length to accommodate the cells in left side", metavar="g")
+parser.add_option("-k", "--k", dest="k", default=0,
+                  help="use this to specify the percentage of cells in x-direction in right side", metavar="k")
+parser.add_option("-t", "--t", dest="t", default=0,
+                  help="use this to specify the percentage length to accommodate the cells in left side", metavar="t")
 (options, args)=parser.parse_args()
 
 # Set the VTK type for the interior elements and the boundary elements
@@ -34,9 +42,12 @@ mNode     = int(options.mNode)
 l = float(options.l)
 b = float(options.b)
 inl = float(options.inlet)
+c  = float(options.c)
+g = float(options.g)
+k  = float(options.k)
+t = float(options.t)
 
 Mesh_File = open(options.filename,"w")
-
 
 # Write the dimension of the problem and the number of interior elements
 Mesh_File.write( "%\n" )
@@ -47,6 +58,11 @@ Mesh_File.write( "%\n" )
 Mesh_File.write( "% Inner element connectivity\n" )
 Mesh_File.write( "%\n" )
 Mesh_File.write( "NELEM= %s\n" % (2*(nNode-1)*(mNode-1)))
+
+
+nNode1 = math.ceil(c*nNode)
+nNode3 = math.ceil(k*nNode)
+nNode2 = nNode - nNode1 - nNode3
 
 # Write the element connectivity
 iElem = 0
@@ -70,9 +86,19 @@ Mesh_File.write( "% Node coordinates\n" )
 Mesh_File.write( "%\n" )
 Mesh_File.write( "NPOIN= %s\n" % ((nNode)*(mNode)) )
 iPoint = 0
+
 for jNode in range(mNode):
-    for iNode in range(nNode):
-        Mesh_File.write( "%15.14f \t %15.14f \t %s\n" % ( (l)*(float(iNode)/float(nNode-1)), (b)*(float(jNode)/float(mNode-1)), iPoint ))
+
+    for iNode in range(nNode1):
+        Mesh_File.write( "%15.14f \t %15.14f \t %s\n" % ( (g*l)*(float(iNode)/float(nNode1-1)), (b)*(float(jNode)/float(mNode-1)), iPoint ))
+        iPoint = iPoint + 1
+
+    for iNode in range(nNode2):
+        Mesh_File.write( "%15.14f \t %15.14f \t %s\n" % ( g*l + ((1-g-t)*l)*(float(iNode)/float(nNode2-1)), (b)*(float(jNode)/float(mNode-1)), iPoint ))
+        iPoint = iPoint + 1
+
+    for iNode in range(1,nNode3+1):
+        Mesh_File.write( "%15.14f \t %15.14f \t %s\n" % ( (1-t)*l + (t*l)*(float(iNode)/float(nNode3-1)), (b)*(float(jNode)/float(mNode-1)), iPoint ))
         iPoint = iPoint + 1
 
 # Write the header information for the boundary markers
