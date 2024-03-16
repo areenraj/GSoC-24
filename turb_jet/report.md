@@ -16,14 +16,14 @@ The jet is axisymmetric, as well as turbulent, hence we need some sort of turbul
 
 Hence we make the following choice
 
-'''
+```
 SOLVER= INC_RANS
 KIND_TURB_MODEL= SST
 MATH_PROBLEM= DIRECT
 RESTART_SOL= NO
 AXISYMMETRIC = YES
 INC_ENERGY_EQUATION=NO
-'''
+```
 
 The incompressible SST model satsifies these requirements. By default, we will not be solving the energy equation as, in incompressible flow, it is uncoupled and not needed to solve for the flow variables.
 
@@ -33,7 +33,7 @@ We consider a constant Prandtl Number and Viscosity model along with Initial Con
 
 Since this is a steady state simulation, we also set the time marching to off and consider the standard air model for the fluid.
 
-'''
+```
 TIME_MARCHING= NO
 FLUID_MODEL= STANDARD_AIR
 
@@ -51,7 +51,7 @@ PRANDTL_TURB= 0.90
 
 REF_LENGTH= 1.0
 REF_AREA= 1.0
-'''
+```
 
 ### Boundary Conditions and Domain Setup
 
@@ -63,11 +63,11 @@ Given below is the domain setup that we are using with 40x10 m setup and an inle
 - GREEN - Left Wall - No Slip and Adiabatic
 - BLUE - Inlet - Constant Velocity 
 - YELLOW - Bottom Line - Symmetric Axis 
-- PINK - Outlet - Zero Pressure 
-
+- PINK - Outlet - Zero Pressure
+- 
 These boundary conditions are specified through the MARKER options 
 
-'''
+```
 MARKER_HEATFLUX = (left, 0.0, upper, 0.0)
 MARKER_EULER = (left, upper)
 INC_INLET_TYPE= VELOCITY_INLET
@@ -77,7 +77,7 @@ MARKER_OUTLET = (right, 0.0)
 MARKER_SYM = (lower)
 
 MARKER_INLET_TURBULENT = (inlet, 0.025, 10)
-'''
+```
 
 The velocity is equal to 2 m/s and the diameter is 0.6. Therefore, for a Reynolds Number of 2000, the viscosity then equals 0.0006 m2/s.
 
@@ -91,7 +91,7 @@ We use convective second order upwind schemes to provide less dissipation, since
 
 For the turbulent scheme, our only choice is SCALAR_UPWIND and for the Flow scheme our choice becomes FDS for incompressible solvers.
 
-'''
+```
 NUM_METHOD_GRAD= WEIGHTED_LEAST_SQUARES
 CFL_NUMBER= 15.0
 
@@ -104,7 +104,7 @@ CONV_NUM_METHOD_TURB= SCALAR_UPWIND
 CONV_NUM_METHOD_FLOW= FDS
 MUSCL_TURB= YES
 MUSCL_FLOW = YES
-'''
+```
 
 We make use of the standard FGMRES solver with an effective preconditioner such as ILU. The maximum iteration number is kept at 50 and is never hit throughout the simulation. We operate at a CFL of 15.0 where the solution doesn't diverge and takes relatively less time to converge. 
 
@@ -114,7 +114,7 @@ Here for screen output, we deifne the number of inner iterations as well as the 
 
 In the case of volume output we define all three groups from primitive to solution to residuals, which gives us a comprehensive look at our setup
 
-'''
+```
 SCREEN_OUTPUT=  RMS _RES TIME_ITER INNER_ITER \
                 RMS_VELOCITY-X \
                 LINSOL_ITER LINSOL_RESIDUAL\
@@ -133,7 +133,7 @@ CONV_FILENAME= history
 OUTPUT_FILES= RESTART_ASCII, PARAVIEW_MULTIBLOCK
 VOLUME_OUTPUT= RESIDUAL, PRIMITIVE , SOLUTION
 OUTPUT_WRT_FREQ= 1000
-'''
+```
 
 ## Running the Simulation
 
@@ -146,5 +146,6 @@ The velocity profiles for both axial and radial directions match with the profil
 The axial profile from normalized z coordinate 20 to 100, have a hyperbolic character.
 
 The radial profile from normalized y coordinate 0 to 2, at z=30, have a exponential decay.
+
 
 
