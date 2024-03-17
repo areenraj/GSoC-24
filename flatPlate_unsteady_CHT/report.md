@@ -87,7 +87,7 @@ The case is run for 1350 iterations or 4.05 time units, we can clearly see the t
 This implies two things,
 
 - The temperature on the plate marker is varying with the use of the python wrapper
-
 - CHT is being observed correctly between the plate and the fluid.
 
-CHT.mp4
+https://github.com/areenraj/GSOC_SU2/assets/80944803/3f06c60a-792c-4da2-839d-5eabcb74ddc4
+
