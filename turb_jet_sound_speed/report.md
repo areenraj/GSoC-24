@@ -123,7 +123,19 @@ SetHistoryOutputValue("AVG_SOUNDSPEED", Tot_Surface_SoundSpeed);
 
 ## Results
 
-We rerun the turbulent jet case but now with a compressible solver. The temperature is initialized to 300 K and does not change a lot throughout the simulation so we expect a value of around 345-350 m/s of the sound speed.
+We rerun the turbulent jet case but now with a compressible solver. The mesh is as follows.
+
+![Domain](Mesh.png)
+
+- RED - Upper Wall - No Slip and Adiabatic
+- GREEN - Left Wall - No Slip and Adiabatic
+- BLUE - Inlet - Constant Velocity 
+- YELLOW - Bottom Line - Symmetric Axis 
+- PINK - Outlet - Atmospheric Pressure
+
+![Mesh](Mesh_Internal.png)
+
+The temperature is initialized to 300 K and does not change a lot throughout the simulation so we expect a value of around 345-350 m/s of the sound speed.
 
 We will be analyzing the inlet marker. Hence the following setup in the config file is used.
 
