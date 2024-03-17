@@ -24,4 +24,16 @@ Note: Please make sure that the nodes in both x and y directions are divisible b
 For running the case and cleaning the directly simultaneously please use
 > bash run.sh
 
+## Third Task - Completed 14-04-24
+
+- Completed the Python Wrapper Case
+- Ran it for 1350 iterations
+- Extracted the temporal evolution of the temperature profile
+
+For runnin the case with the wrapper in parallel
+> bash run.sh
+
+For cleaning the directory
+> bash clean.sh
+
 
