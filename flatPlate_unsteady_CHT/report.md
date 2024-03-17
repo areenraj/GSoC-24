@@ -90,4 +90,4 @@ This implies two things,
 
 - CHT is being observed correctly between the plate and the fluid.
 
-![CHT](CHT.mp4)
+CHT.mp4
