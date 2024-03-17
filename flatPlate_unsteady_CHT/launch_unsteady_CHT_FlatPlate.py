@@ -72,7 +72,7 @@ def main():
 
 
   CHTMarkerID = None
-  CHTMarker = 'wall'       # Specified by the user
+  CHTMarker = 'plate'       # Specified by the user
 
   # Get all the tags with the CHT option
   CHTMarkerList =  SU2Driver.GetCHTMarkerTags()
@@ -107,10 +107,10 @@ def main():
     # Time iteration preprocessing
     SU2Driver.Preprocess(TimeIter)
     # Define the homogeneous unsteady wall temperature on the structure (user defined)
-    WallTemp = 300.0 + 57.0*sin(0.2*pi*time)
+    WallTemp = 293.0 + 57.0*sin(2*pi*time)
     # Set this temperature to all the vertices on the specified CHT marker
     for iVertex in range(nVertex_CHTMarker):
-      SU2Driver.SetMarkerCustomTemperature('', iVertex, WallTemp)
+      SU2Driver.SetMarkerCustomTemperature(CHTMarkerID, iVertex, WallTemp)
 
     # Tell the SU2 drive to update the boundary conditions
     SU2Driver.BoundaryConditionsUpdate()
