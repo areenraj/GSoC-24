@@ -30,10 +30,31 @@ For running the case and cleaning the directly simultaneously please use
 - Ran it for 1350 iterations
 - Extracted the temporal evolution of the temperature profile
 
-For runnin the case with the wrapper in parallel
+For running the case with the wrapper in parallel
 > bash run.sh
 
 For cleaning the directory
 > bash clean.sh
+
+## Fourth Task - Completed 17-04-24
+
+- Completed the spatially varying Python Wrapper Case
+- Used a steady state CHT simulation
+- Used the vertex information at the marker to set a spatial profile
+
+For running the case with the wrapper in parallel
+> bash run.sh
+
+For cleaning the directory
+> bash clean.sh
+
+## Fifth Task - Complete 17-04-24
+
+- Completed adding a new volume and history output of speed of sound to the compressible solver
+- Edited the CFlowCompOutput.cpp file to add and set a new volume output that contains spatial data of speed of soun
+- Edited the CFlowCompOutput.cpp file to add and set a new history and screen output that shows the area averaged speed of sound over the entire mesh
+
+For running the case and cleaning the directly simultaneously please use
+> bash run.sh
 
 
