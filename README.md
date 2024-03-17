@@ -24,7 +24,7 @@ Note: Please make sure that the nodes in both x and y directions are divisible b
 For running the case and cleaning the directly simultaneously please use
 > bash run.sh
 
-## Third Task - Completed 14-04-24
+## Third Task - Completed 17-04-24
 
 - Completed the Python Wrapper Case
 - Ran it for 1350 iterations
