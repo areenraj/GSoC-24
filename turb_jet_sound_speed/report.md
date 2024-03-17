@@ -140,7 +140,7 @@ We will be analyzing the inlet marker. Hence the following setup in the config f
 ```
 MARKER_ANALYZE = (inlet)
 ```
-The SOUND_SPEED keyword is added in both SCREEN_OUTPUT and HISTORY_OUTPUT giving the following results
+The AVG_SOUNDSPEED keyword is added in both SCREEN_OUTPUT and HISTORY_OUTPUT giving the following results
 
 ![Screen Output](Screen.png)
 
