@@ -135,13 +135,18 @@ We rerun the turbulent jet case but now with a compressible solver. The mesh is 
 
 ![Mesh](Mesh_Internal.png)
 
-The temperature is initialized to 300 K and does not change a lot throughout the simulation so we expect a value of around 345-350 m/s of the sound speed.
-
 We will be analyzing the inlet marker. Hence the following setup in the config file is used.
 
 ```
 MARKER_ANALYZE = (inlet)
 ```
+The SOUND_SPEED keyword is added in both SCREEN_OUTPUT and HISTORY_OUTPUT giving the following results
+
+![Screen Output](Screen.png)
+
+![History Output](History.png)
+
+The temperature is initialized to 300 K and does not change a lot throughout the simulation so we expect a value of around 345-350 m/s of the sound speed.
 
 The speed of sound should also be only dependent on the temperature profile.
 
