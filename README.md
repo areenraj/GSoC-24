@@ -51,8 +51,8 @@ For cleaning the directory
 ## Fifth Task - Completed 17-03-24
 
 - Completed adding a new volume and history output of speed of sound to the compressible solver
-- Edited the CFlowCompOutput.cpp file to add and set a new volume output that contains spatial data of speed of soun
-- Edited the CFlowCompOutput.cpp file to add and set a new history and screen output that shows the area averaged speed of sound over the entire mesh
+- Edited the CFlowCompOutput.cpp file to add and set a new volume output that contains spatial data of speed of sound
+- Edited the CFlowCompOutput.cpp file to add and set a new history and screen output that shows the area averaged speed of sound over a certain marker
 
 For running the case and cleaning the directly simultaneously please use
 > bash run.sh
