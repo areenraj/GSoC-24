@@ -89,15 +89,15 @@ iPoint = 0
 
 for jNode in range(mNode):
 
-    for iNode in range(nNode1):
+    for iNode in range(nNode1-1):
         Mesh_File.write( "%15.14f \t %15.14f \t %s\n" % ( (g*l)*(float(iNode)/float(nNode1-1)), (b)*(float(jNode)/float(mNode-1)), iPoint ))
         iPoint = iPoint + 1
 
-    for iNode in range(nNode2):
-        Mesh_File.write( "%15.14f \t %15.14f \t %s\n" % ( g*l + ((1-g-t)*l)*(float(iNode)/float(nNode2-1)), (b)*(float(jNode)/float(mNode-1)), iPoint ))
+    for iNode in range(nNode2+1):
+        Mesh_File.write( "%15.14f \t %15.14f \t %s\n" % ( g*l + ((1-g-t)*l)*(float(iNode)/float(nNode2+1)), (b)*(float(jNode)/float(mNode-1)), iPoint ))
         iPoint = iPoint + 1
 
-    for iNode in range(1,nNode3+1):
+    for iNode in range(nNode3):
         Mesh_File.write( "%15.14f \t %15.14f \t %s\n" % ( (1-t)*l + (t*l)*(float(iNode)/float(nNode3-1)), (b)*(float(jNode)/float(mNode-1)), iPoint ))
         iPoint = iPoint + 1
 
