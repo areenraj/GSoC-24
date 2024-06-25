@@ -1,5 +1,11 @@
 # GSOC SU2
 
+## Running GMSH Mesh for Flat Plate
+
+The files for the entire case are given in SU2_Testcases/flat_plate/FEM_AREEN_MESH
+
+You will need to add your own CPU BLAS path to the nvblas.conf file if you want to use NVBLAS. The .geo file is also provided. 
+
 ## First Task - Completed 12-03-24
 
 - Successfully compiled the code
