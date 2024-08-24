@@ -1,6 +1,6 @@
 # Google Summer of Code '24 Project - Feasibility of GPU Acceleration in SU2
 
-__ This repo does not contain the work done during the project. It contains the assignment, tasks and studies done during the proposal period and the link to the actual project repo along with the full report given below. 
+*This repo does not contain the work done during the project. It contains the assignment, tasks and studies done during the proposal period and the link to the actual project repo along with the full report given below.*
 
 ## LINK TO REPO WITH FULL SOURCE CODE, COMMIT AND DIFF HISTORY - [https://github.com/areenraj/SU2_GSoC_GPU.git](https://github.com/areenraj/SU2_GSoC_GPU.git)
 
