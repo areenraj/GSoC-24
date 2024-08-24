@@ -40,16 +40,15 @@ Error handling is done by an Error Check Wrapper and should provide exit codes a
 
 ### Benchmarking
 
-To benchmark the individual member functions, the following sections of code in the CMatrixVectorProduct.hpp file have to be uncommented.
+To benchmark the individual member functions, the following sections of code in the CMatrixVectorProduct.hpp file have to be added.
 
 ```
 
    std::ofstream serial;
 
    auto start = std::chrono::high_resolution_clock::now(); 
-.
-.
-.
+
+   ![[FUNCTION_TO_BE_BENCHMARKED]]!
 
    auto stop = std::chrono::high_resolution_clock::now();
    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
@@ -60,6 +59,13 @@ To benchmark the individual member functions, the following sections of code in 
    serial << time << "\n";
    serial.close();
 
+```
+and the following headers added to the same file
+```
+#include <fstream>
+#include <chrono>
+#include <time.h>
+#include <iostream>
 ```
 
 This will create a file named MVP_Exec_Time.txt which contains the execution time in microseconds. Always remove or delete the file before starting another run or else the new times will get appended onto it.
