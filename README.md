@@ -2,7 +2,7 @@
 
 *This repo does not contain the work done during the project. It contains the assignment, tasks and studies done during the proposal period and the link to the actual project repo along with the full report given below.*
 
-## LINK TO REPO WITH FULL SOURCE CODE, COMMIT AND DIFF HISTORY - [https://github.com/areenraj/SU2_GSoC_GPU.git](https://github.com/areenraj/SU2_GSoC_GPU.git)
+## LINK TO REPO WITH FULL SOURCE CODE, COMMIT AND DIFF HISTORY - [https://github.com/areenraj/SU2_GSoC_GPU.git](https://github.com/areenraj/SU2_GSoC_GPU.git) AND THE PULL REQUEST - [PR #2346](https://github.com/su2code/SU2/pull/2346) 
 
 The linked code repository contains a version of the SU2 codebase that has CUDA support enabled for offloading particular linear algebra options to the GPU. The current implementations show promise for increased performance with further optimizations and changes. We are also currently working in a new research direction as will be outlined further below.
 
