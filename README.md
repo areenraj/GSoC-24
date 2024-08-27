@@ -130,7 +130,7 @@ As expected, the memory transfer between the host and device comprises of the ma
 
 ## Results
 
-All benchmarks are done without GPU error checking as it adds a considerable overhead to the entire operation.
+All benchmarks are done without GPU error checking as it adds a considerable overhead to the entire operation. They are also all done in debug mode of the code to make sure that the correct functions were being called.
 
 The following results were done with increasing mesh density for the flatplate case.
 
