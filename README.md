@@ -116,7 +116,7 @@ A flowchart of the current algorithm that we use is presented below.
 
 ![alt text](Docs/Report/NVIDIA-0.png)
 ![alt text](Docs/Report/NVIDIA-2.png)
-![alt text](Docs/Report/NVIDIA-3.png)
+![alt text](Docs/Report/NVIDIA-4.png)
 
 The GPUMatrixVectorProduct Member Function belongs to the CSysMatrix Class
 
