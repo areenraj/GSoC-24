@@ -114,6 +114,10 @@ A flowchart of the current algorithm that we use is presented below.
 
 ![alt text](Docs/Report/Current_Algorithm.png)
 
+![alt text](Doc/Report/NVIDIA-0.png)
+![alt text](Doc/Report/NVIDIA-1.png)
+![alt text](Doc/Report/NVIDIA-2.png)
+
 The GPUMatrixVectorProduct Member Function belongs to the CSysMatrix Class
 
 - The function makes cudaMalloc and cudaMemcpy API calls to transfer the participating matrix and vector data to the GPU
